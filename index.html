@@ -5,7 +5,7 @@
 <title>Aites Dental Clinic</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link rel="icon" type="image/jpeg" href="logo6.jpg">
+<link rel="icon" href="logo6.jpg">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
@@ -25,7 +25,7 @@ body{
   scroll-behavior:smooth;
 }
 
-/* NAV */
+/* NAVIGATION */
 nav{
   background:white;
   border-bottom:1px solid rgba(91,45,139,0.15);
@@ -36,14 +36,10 @@ nav{
   gap:10px;
 }
 .brand img{ height:50px; }
+
 nav a{
   color:var(--purple);
   font-weight:600;
-}
-
-/* GOOGLE REVIEW ICON */
-.review-icon{
-  font-size:20px;
 }
 
 /* HERO */
@@ -72,7 +68,7 @@ nav a{
   font-size:3rem;
 }
 
-/* BOOKING CARD */
+/* BOOKING */
 .top-booking{
   max-width:900px;
   margin:-70px auto 50px;
@@ -89,7 +85,7 @@ nav a{
   color:white;
 }
 
-/* SECTION */
+/* SECTIONS */
 .section{
   padding:4rem 1rem;
   text-align:center;
@@ -99,29 +95,35 @@ nav a{
   color:var(--purple-dark);
 }
 
+/* SERVICES */
+.services-list{
+  max-width:1100px;
+  margin:2rem auto;
+  text-align:left;
+  background:white;
+  padding:2rem;
+  border-radius:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+.services-list ul{
+  columns:2;
+}
+.services-list li{
+  margin:6px 0;
+}
+
 /* SLIDESHOW */
 .slider{
   max-width:1000px;
   margin:2rem auto;
-  position:relative;
 }
 .slider img{
   width:100%;
   height:500px;
   object-fit:cover;
   border-radius:20px;
+  box-shadow:0 20px 40px rgba(0,0,0,0.15);
 }
-.slider button{
-  position:absolute;
-  top:50%;
-  transform:translateY(-50%);
-  background:var(--purple);
-  color:white;
-  border:none;
-  padding:10px 15px;
-}
-.prev{ left:10px; }
-.next{ right:10px; }
 
 /* FOOTER */
 footer{
@@ -146,9 +148,8 @@ footer{
 <li><a href="#about">About</a></li>
 <li><a href="#services">Services</a></li>
 <li><a href="gallery.html">Gallery</a></li>
-<li>
-<a class="review-icon" href="https://share.google/xRahRh9JELDEugAih" target="_blank">⭐ Reviews</a>
-</li>
+<li><a href="https://www.google.com/maps/search/?api=1&query=7161+N.+T.+Garcia+St.+San+Dionisio+Paranaque+City" target="_blank">📍 Location</a></li>
+<li><a href="https://share.google/xRahRh9JELDEugAih" target="_blank">⭐ Reviews</a></li>
 </ul>
 </nav>
 
@@ -181,20 +182,100 @@ footer{
 
 <section id="about" class="section">
 <h2>About Dr. Olive Lim-Aites</h2>
-<p>Dr. Olive Lim-Aites leads the clinic with excellence in modern, family-friendly dentistry. She ensures patients feel comfortable and valued.</p>
+<p>
+Dr. Olive Lim-Aites leads the clinic with a strong commitment to excellence in modern, family-friendly dentistry. Known for her gentle touch and compassionate care, she ensures that every patient—from young children to adults—feels comfortable, valued, and well cared for. With a focus on personalized, high-quality treatments, Dr. Lim-Aites creates a warm and welcoming environment where families can achieve healthy, confident smiles together.
+</p>
 </section>
 
 <section id="services" class="section">
-<h2>Our Services</h2>
-<p>Complete General Dentistry • Orthodontics • TMJ • Implants • Cosmetic Dentistry • Pediatric Care</p>
+<h2>Complete Dental Services</h2>
+<div class="services-list">
+<ul>
+<li>Oral Prophylaxis (Professional Teeth Cleaning)</li>
+<li>Fluoride Therapy / Topical Fluoride Application</li>
+<li>Dental Sealant Application</li>
+<li>Oral Hygiene Instruction and Counseling</li>
+<li>Dental Recall / Periodic Oral Examination</li>
+<li>Dietary Counseling for Caries Prevention</li>
+<li>Comprehensive Oral Examination</li>
+<li>Periodic Oral Examination</li>
+<li>Intraoral Periapical Radiograph (IOPA)</li>
+<li>Bitewing Radiograph</li>
+<li>Pulp Vitality Testing</li>
+<li>Diagnostic Casts / Study Models</li>
+<li>Composite Resin Restoration</li>
+<li>Glass Ionomer Cement Restoration</li>
+<li>Temporary Restoration</li>
+<li>Core Build-up</li>
+<li>Inlay and Onlay Restorations</li>
+<li>Post and Core Placement</li>
+<li>Tooth Recontouring / Odontoplasty</li>
+<li>Root Canal Therapy (RCT)</li>
+<li>Pulpotomy</li>
+<li>Pulpectom</li>
+<li>Endodontic Retreatment</li>
+<li>Post-Endodontic Restoration</li>
+<li>Simple Tooth Extraction</li>
+<li>Surgical Tooth Extraction</li>
+<li>Impacted Tooth Removal</li>
+<li>Alveoloplasty</li>
+<li>Frenectomy / Frenotomy</li>
+<li>Incision and Drainage of Oral Abscess</li>
+<li>Biopsy of Oral Lesions</li>
+<li>Apicoectomy</li>
+<li>Pre-prosthetic Surgery</li>
+<li>Complete Denture</li>
+<li>Removable Partial Denture</li>
+<li>Flexible Denture</li>
+<li>Thermosen</li>
+<li>Fixed Partial Denture</li>
+<li>Jacket Crown</li>
+<li>Veneered Crown</li>
+<li>Maryland Bridge</li>
+<li>Dental Implant Placement</li>
+<li>Implant-Supported Prosthesis</li>
+<li>Denture Relining and Rebasing</li>
+<li>Denture Repair</li>
+<li>Vital Tooth Bleaching</li>
+<li>Porcelain Veneers</li>
+<li>Composite Veneers</li>
+<li>Cosmetic Dental Bonding</li>
+<li>Gum Contouring</li>
+<li>Infant Oral Health Care</li>
+<li>Child Oral Prophylaxis</li>
+<li>Fluoride Varnish Application</li>
+<li>Pit and Fissure Sealants</li>
+<li>Pulpotomy / Pulpectomy for Primary Teeth</li>
+<li>Stainless Steel Crown</li>
+<li>Space Maintainer</li>
+<li>Interceptive Orthodontics</li>
+<li>Scaling and Polishing</li>
+<li>Scaling and Root Planing</li>
+<li>Periodontal Maintenance Therapy</li>
+<li>Gingivectomy</li>
+<li>Gingivoplasty</li>
+<li>Periodontal Flap Surgery</li>
+<li>Bone Grafting</li>
+<li>Guided Tissue Regeneration</li>
+<li>Crown Lengthening</li>
+<li>Comprehensive Orthodontic Treatment</li>
+<li>Metal Braces</li>
+<li>Ceramic Braces</li>
+<li>Self-Ligating Braces</li>
+<li>Clear Aligner Therapy</li>
+<li>Orthodontic Retainers</li>
+<li>TMJ Disorder Management</li>
+<li>Occlusal Adjustment</li>
+<li>Night Guard Fabrication</li>
+<li>Sports Mouthguard Fabrication</li>
+</ul>
+</div>
 </section>
 
 <section class="section">
 <h2>Dental Works</h2>
 <div class="slider">
-<button class="prev" onclick="prevSlide()">❮</button>
 <img id="slide" src="smile1.jpg">
-<button class="next" onclick="nextSlide()">❯</button>
 </div>
 </section>
 
@@ -213,10 +294,6 @@ document.getElementById("slide").src = slides[current];
 }
 function nextSlide(){
 current = (current+1)%slides.length;
-showSlide();
-}
-function prevSlide(){
-current = (current-1+slides.length)%slides.length;
 showSlide();
 }
 setInterval(nextSlide,3000);
