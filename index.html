@@ -11,6 +11,9 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
+<!-- EMAILJS -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
 <style>
 :root{
   --purple:#5B2D8B;
@@ -26,7 +29,6 @@ body{
   scroll-behavior:smooth;
 }
 
-/* NAVIGATION */
 nav{
   background:white;
   border-bottom:1px solid rgba(91,45,139,0.15);
@@ -43,7 +45,6 @@ nav a{
   font-weight:600;
 }
 
-/* HERO */
 .hero{
   height:85vh;
   display:flex;
@@ -73,7 +74,6 @@ nav a{
   font-weight:600;
 }
 
-/* BOOKING */
 .top-booking{
   max-width:1000px;
   margin:-80px auto 60px;
@@ -91,7 +91,6 @@ nav a{
   font-weight:600;
 }
 
-/* SECTIONS */
 .section{
   padding:4rem 1rem;
   text-align:center;
@@ -101,24 +100,6 @@ nav a{
   color:var(--purple-dark);
 }
 
-/* SERVICES */
-.services-list{
-  max-width:1200px;
-  margin:2rem auto;
-  text-align:left;
-  background:white;
-  padding:2rem;
-  border-radius:20px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.08);
-}
-.services-list ul{
-  columns:2;
-}
-.services-list li{
-  margin:6px 0;
-}
-
-/* SLIDESHOW */
 .slider{
   max-width:1100px;
   margin:2rem auto;
@@ -131,7 +112,6 @@ nav a{
   box-shadow:0 20px 40px rgba(0,0,0,0.15);
 }
 
-/* FOOTER */
 footer{
   background:var(--purple-dark);
   color:white;
@@ -168,107 +148,59 @@ footer{
 
 <div class="top-booking">
 <h2>Book Appointment</h2>
-<form onsubmit="sendWhatsApp(); return false;">
+<form onsubmit="handleBooking(); return false;">
 <input type="text" id="name" placeholder="Full Name" required>
 <input type="tel" id="phone" placeholder="Contact Number" required>
 
 <select id="service" required>
 <option value="">Select Service</option>
-<option>Oral Prophylaxis (Professional Teeth Cleaning)</option>
-<option>Fluoride Therapy</option>
-<option>Dental Sealant Application</option>
-<option>Comprehensive Oral Examination</option>
-<option>Root Canal Therapy (RCT)</option>
-<option>Simple Tooth Extraction</option>
-<option>Dental Implant Placement</option>
-<option>Complete Denture</option>
+<option>Oral Prophylaxis</option>
+<option>Root Canal Therapy</option>
+<option>Dental Implant</option>
+<option>Orthodontics</option>
 <option>Teeth Whitening</option>
-<option>Orthodontic Braces</option>
 <option>TMJ Treatment</option>
-<option>Scaling and Root Planing</option>
-<option>Gum Contouring</option>
-<option>Pediatric Dentistry</option>
-<option>Clear Aligner Therapy</option>
 </select>
 
-<button type="submit">Book via WhatsApp</button>
+<button type="submit">Book Appointment</button>
 </form>
 </div>
-
-<main class="container">
-
-<section id="about" class="section">
-<h2>About Dr. Olive Lim-Aites</h2>
-<p>
-Dr. Olive Lim-Aites leads the clinic with a strong commitment to excellence in modern, family-friendly dentistry. Known for her gentle touch and compassionate care, she ensures that every patient—from young children to adults—feels comfortable, valued, and well cared for. With a focus on personalized, high-quality treatments, Dr. Lim-Aites creates a warm and welcoming environment where families can achieve healthy, confident smiles together.
-</p>
-</section>
-
-<section id="services" class="section">
-<h2>Complete Dental Services</h2>
-<div class="services-list">
-<ul>
-<li>Oral Prophylaxis (Professional Teeth Cleaning)</li>
-<li>Fluoride Therapy</li>
-<li>Dental Sealant Application</li>
-<li>Comprehensive Oral Examination</li>
-<li>Composite Restoration</li>
-<li>Glass Ionomer Restoration</li>
-<li>Root Canal Therapy (RCT)</li>
-<li>Tooth Extraction</li>
-<li>Impacted Tooth Removal</li>
-<li>Dental Implants</li>
-<li>Complete Dentures</li>
-<li>Dental Bridges</li>
-<li>Teeth Whitening</li>
-<li>Porcelain Veneers</li>
-<li>Pediatric Dentistry</li>
-<li>Scaling and Root Planing</li>
-<li>Orthodontic Braces</li>
-<li>Clear Aligners</li>
-<li>TMJ Disorder Management</li>
-<li>Night Guard Fabrication</li>
-</ul>
-</div>
-</section>
-
-<section class="section">
-<h2>Dental Works</h2>
-<div class="slider">
-<img id="slide" src="smile1.jpg">
-</div>
-</section>
-
-</main>
 
 <footer>
 © 2026 Aites Dental Clinic • Parañaque City
 </footer>
 
 <script>
-const slides = Array.from({length:20}, (_,i)=>`smile${i+1}.jpg`);
-let current = 0;
+(function(){
+emailjs.init("X7NoFKx6UwAEbSwSk");
+})();
 
-function showSlide(){
-document.getElementById("slide").src = slides[current];
-}
-function nextSlide(){
-current = (current+1)%slides.length;
-showSlide();
-}
-setInterval(nextSlide,3000);
+function handleBooking(){
 
-function sendWhatsApp(){
 var name=document.getElementById("name").value;
 var phone=document.getElementById("phone").value;
 var service=document.getElementById("service").value;
 
+// SEND EMAIL
+emailjs.send("service_ui4h1a8","template_hvu9oqe",{
+name:name,
+phone:phone,
+service:service
+}).then(function(response){
+console.log("Email sent successfully!");
+}, function(error){
+console.log("FAILED...", error);
+});
+
+// SEND WHATSAPP
 var message="Hello Aites Dental Clinic,%0A%0AI would like to book an appointment.%0A%0A"+
 "Name: "+encodeURIComponent(name)+"%0A"+
 "Contact: "+encodeURIComponent(phone)+"%0A"+
 "Service: "+encodeURIComponent(service);
 
 window.open("https://wa.me/639952949645?text="+message,"_blank");
+
+alert("Booking Sent Successfully!");
 }
 </script>
 
