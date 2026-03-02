@@ -28,7 +28,7 @@ body{
   scroll-behavior:smooth;
 }
 
-/* NAV */
+/* NAVIGATION */
 nav{
   background:white;
   border-bottom:1px solid rgba(91,45,139,0.15);
@@ -58,7 +58,7 @@ nav a{
   content:"";
   position:absolute;
   inset:0;
-  background:rgba(255,255,255,0.80);
+  background:rgba(255,255,255,0.82);
 }
 .hero-content{
   position:relative;
@@ -92,7 +92,7 @@ nav a{
   font-weight:700;
 }
 
-/* SECTION */
+/* SECTIONS */
 .section{
   padding:4rem 1rem;
   text-align:center;
@@ -120,7 +120,7 @@ nav a{
   margin:6px 0;
 }
 
-/* SLIDER */
+/* SLIDESHOW */
 .slider{
   max-width:1100px;
   margin:2rem auto;
@@ -148,7 +148,7 @@ footer{
 <nav class="container-fluid">
 <ul>
 <li class="brand">
-<img src="logo6.jpg">
+<img src="logo6.jpg" alt="Aites Dental Clinic Logo">
 <span>Aites Dental Clinic</span>
 </li>
 </ul>
@@ -168,7 +168,7 @@ footer{
 </div>
 </section>
 
-<!-- BOOKING -->
+<!-- BOOKING SECTION -->
 <div class="top-booking">
 <h2>Book Appointment</h2>
 <form onsubmit="handleBooking(); return false;">
@@ -177,7 +177,7 @@ footer{
 
 <select id="service" required>
 <option value="">Select Service</option>
-<option>Oral Prophylaxis (Professional Teeth Cleaning)</option>
+<option>Oral Prophylaxis</option>
 <option>Fluoride Therapy</option>
 <option>Dental Sealant</option>
 <option>Root Canal Therapy</option>
@@ -207,11 +207,11 @@ Dr. Olive Lim-Aites leads the clinic with a strong commitment to excellence in m
 <div class="services-list">
 <ul>
 <li>Oral Prophylaxis (Professional Teeth Cleaning)</li>
-<li>Fluoride Therapy / Topical Fluoride Application</li>
+<li>Fluoride Therapy</li>
 <li>Dental Sealant Application</li>
 <li>Comprehensive Oral Examination</li>
 <li>Composite Resin Restoration</li>
-<li>Root Canal Therapy (RCT)</li>
+<li>Root Canal Therapy</li>
 <li>Simple & Surgical Extraction</li>
 <li>Complete & Partial Dentures</li>
 <li>Dental Implant Placement</li>
@@ -228,7 +228,7 @@ Dr. Olive Lim-Aites leads the clinic with a strong commitment to excellence in m
 <section class="section">
 <h2>Dental Works</h2>
 <div class="slider">
-<img id="slide" src="smile1.jpg">
+<img id="slide" src="smile1.jpg" alt="Dental Slideshow">
 </div>
 </section>
 
@@ -243,6 +243,7 @@ emailjs.init("X7NoFKx6UwAEbSwSk");
 
 const slides = Array.from({length:20}, (_,i)=>`smile${i+1}.jpg`);
 let current=0;
+
 setInterval(()=>{
 current=(current+1)%slides.length;
 document.getElementById("slide").src=slides[current];
@@ -253,11 +254,16 @@ var name=document.getElementById("name").value;
 var phone=document.getElementById("phone").value;
 var service=document.getElementById("service").value;
 
-emailjs.send("service_ui4h1a8","template_hvu9oqe",{
+emailjs.send("service_u66hz8n","template_hvu9oqe",{
 name:name,
 phone:phone,
 service:service,
 to_email:"olivialimaites1205@gmail.com"
+}).then(function(){
+console.log("Email sent successfully");
+}).catch(function(error){
+console.log("Email error:", error);
+alert("Email failed. Check EmailJS settings.");
 });
 
 var message="Hello Aites Dental Clinic,%0A%0AI would like to book an appointment.%0A%0A"+
