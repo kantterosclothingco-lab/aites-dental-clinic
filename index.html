@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="UTF-8" />
 <title>Aites Dental Clinic</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<link rel="icon" href="logo6.jpg">
-<link rel="apple-touch-icon" href="logo6.jpg">
+<link rel="icon" href="logo6.jpg" />
+<link rel="apple-touch-icon" href="logo6.jpg" />
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet" />
 
 <style>
 :root{
@@ -18,32 +18,26 @@
   --teal:#1FA7AE;
   --bg:#F6FBFC;
 }
-
 body{
   margin:0;
   font-family:'Poppins',sans-serif;
   background:var(--bg);
   scroll-behavior:smooth;
 }
-
 nav{
   background:white;
   border-bottom:1px solid rgba(91,45,139,0.15);
 }
-
 .brand{
   display:flex;
   align-items:center;
   gap:10px;
 }
-
 .brand img{ height:50px; }
-
 nav a{
   color:var(--purple);
   font-weight:600;
 }
-
 .hero{
   height:85vh;
   display:flex;
@@ -53,30 +47,28 @@ nav a{
   background:url('smile5.jpg') center/cover no-repeat;
   position:relative;
 }
-
 .hero::before{
   content:"";
   position:absolute;
   inset:0;
   background:rgba(255,255,255,0.85);
 }
-
 .hero-content{
   position:relative;
   z-index:2;
+  padding:0 16px;
 }
-
 .hero h1{
   font-family:'Playfair Display',serif;
   color:var(--purple-dark);
   font-size:3rem;
 }
-
 .hero p{
   color:var(--purple);
   font-weight:600;
 }
 
+/* BOOKING */
 .top-booking{
   max-width:1100px;
   margin:-80px auto 60px;
@@ -87,7 +79,6 @@ nav a{
   position:relative;
   z-index:5;
 }
-
 .top-booking button{
   background:linear-gradient(145deg,var(--purple),var(--teal));
   border:none;
@@ -96,16 +87,17 @@ nav a{
   width:100%;
 }
 
+/* SECTIONS */
 .section{
   padding:4rem 1rem;
   text-align:center;
 }
-
 .section h2{
   font-family:'Playfair Display',serif;
   color:var(--purple-dark);
 }
 
+/* SERVICES */
 .services-container{
   max-width:1200px;
   margin:2rem auto;
@@ -115,21 +107,17 @@ nav a{
   box-shadow:0 10px 30px rgba(0,0,0,0.08);
   text-align:left;
 }
-
 .services-container ul{
   columns:2;
   margin-left:20px;
 }
+.services-container li{ margin:6px 0; }
 
-.services-container li{
-  margin:6px 0;
-}
-
+/* SLIDESHOW */
 .slider{
   max-width:1100px;
   margin:2rem auto;
 }
-
 .slider img{
   width:100%;
   height:520px;
@@ -144,179 +132,305 @@ footer{
   padding:2rem;
   text-align:center;
 }
+.small-note{
+  font-size:.9rem;
+  opacity:.85;
+  margin-top:.5rem;
+}
 </style>
 </head>
 
 <body>
 
 <nav class="container-fluid">
-<ul>
-<li class="brand">
-<img src="logo6.jpg">
-<span>Aites Dental Clinic</span>
-</li>
-</ul>
-<ul>
-<li><a href="#about">About</a></li>
-<li><a href="#services">Services</a></li>
-<li><a href="gallery.html">Gallery</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&query=7161+N.+T.+Garcia+St.+San+Dionisio+Paranaque+City" target="_blank">📍 Location</a></li>
-<li><a href="https://share.google/8jXyqOiLTyc3m56Ia" target="_blank">⭐ Reviews</a></li>
-</ul>
+  <ul>
+    <li class="brand">
+      <img src="logo6.jpg" alt="Aites Dental Clinic Logo" />
+      <span>Aites Dental Clinic</span>
+    </li>
+  </ul>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="https://www.google.com/maps/search/?api=1&query=7161+N.+T.+Garcia+St.+San+Dionisio+Paranaque+City" target="_blank">📍 Location</a></li>
+    <li><a href="https://share.google/8jXyqOiLTyc3m56Ia" target="_blank">⭐ Reviews</a></li>
+  </ul>
 </nav>
 
 <section class="hero">
-<div class="hero-content">
-<h1>Your Health And Smile, Our Commitment</h1>
-<p>EST. Since 1996 Established</p>
-</div>
+  <div class="hero-content">
+    <h1>Your Health And Smile, Our Commitment</h1>
+    <p>EST. Since 1996 Established</p>
+  </div>
 </section>
 
+<!-- BOOKING (TOP) -->
 <div class="top-booking">
-<h2>Book Appointment</h2>
-<form onsubmit="handleBooking(event)">
-<input type="text" id="name" placeholder="Full Name" required>
-<input type="tel" id="phone" placeholder="Contact Number" required>
-<input type="email" id="email" placeholder="Email Address" required>
-<input type="date" id="appointmentDate" required>
-<input type="time" id="appointmentTime" required>
+  <h2>Book Appointment</h2>
+  <form id="bookingForm">
+    <input type="text" id="name" placeholder="Full Name" required />
+    <input type="tel" id="phone" placeholder="Contact Number" required />
+    <input type="email" id="email" placeholder="Email Address" required />
+    <input type="date" id="appointmentDate" required />
+    <input type="time" id="appointmentTime" required />
 
-<select id="service" required>
-<option value="">Select Service</option>
-<option>Oral Prophylaxis (Professional Teeth Cleaning)</option>
-<option>Fluoride Therapy / Topical Fluoride Application</option>
-<option>Dental Sealant Application</option>
-<option>Oral Hygiene Instruction and Counseling</option>
-<option>Dental Recall / Periodic Oral Examination</option>
-<option>Dietary Counseling for Caries Prevention</option>
-<option>Comprehensive Oral Examination</option>
-<option>Intraoral Periapical Radiograph (IOPA)</option>
-<option>Bitewing Radiograph</option>
-<option>Pulp Vitality Testing</option>
-<option>Diagnostic Casts / Study Models</option>
-<option>Composite Resin Restoration</option>
-<option>Glass Ionomer Cement Restoration</option>
-<option>Temporary Restoration</option>
-<option>Core Build-up</option>
-<option>Inlay and Onlay Restorations</option>
-<option>Post and Core Placement</option>
-<option>Tooth Recontouring / Odontoplasty</option>
-<option>Root Canal Therapy (RCT)</option>
-<option>Pulpotomy</option>
-<option>Pulpectom</option>
-<option>Endodontic Retreatment</option>
-<option>Post-Endodontic Restoration</option>
-<option>Simple Tooth Extraction</option>
-<option>Surgical Tooth Extraction</option>
-<option>Impacted Tooth Removal</option>
-<option>Complete Denture (Full Denture)</option>
-<option>Dental Implant Placement and Restoration</option>
-<option>Vital Tooth Bleaching (Teeth Whitening)</option>
-<option>Comprehensive Orthodontic Treatment (Braces)</option>
-<option>Temporomandibular Joint (TMJ) Disorder Management</option>
-</select>
+    <!-- FULL SERVICES OPTIONS (for booking) -->
+    <select id="service" required>
+      <option value="">Select Service</option>
+      <option>Oral Prophylaxis (Professional Teeth Cleaning)</option>
+      <option>Fluoride Therapy / Topical Fluoride Application</option>
+      <option>Dental Sealant Application</option>
+      <option>Oral Hygiene Instruction and Counseling</option>
+      <option>Dental Recall / Periodic Oral Examination</option>
+      <option>Dietary Counseling for Caries Prevention</option>
+      <option>Comprehensive Oral Examination</option>
+      <option>Periodic Oral Examination</option>
+      <option>Intraoral Periapical Radiograph (IOPA)</option>
+      <option>Bitewing Radiograph</option>
+      <option>Pulp Vitality Testing</option>
+      <option>Diagnostic Casts / Study Models</option>
+      <option>Composite Resin Restoration</option>
+      <option>Glass Ionomer Cement Restoration</option>
+      <option>Temporary Restoration</option>
+      <option>Core Build-up</option>
+      <option>Inlay and Onlay Restorations</option>
+      <option>Post and Core Placement</option>
+      <option>Tooth Recontouring / Odontoplasty</option>
+      <option>Root Canal Therapy (RCT)</option>
+      <option>Pulpotomy</option>
+      <option>Pulpectomy</option>
+      <option>Endodontic Retreatment</option>
+      <option>Post-Endodontic Restoration</option>
+      <option>Simple Tooth Extraction</option>
+      <option>Surgical Tooth Extraction</option>
+      <option>Impacted Tooth Removal (e.g., Third Molar Surgery)</option>
+      <option>Alveoloplasty</option>
+      <option>Frenectomy / Frenotomy</option>
+      <option>Incision and Drainage of Oral Abscess</option>
+      <option>Biopsy of Oral Lesions</option>
+      <option>Apicoectomy (Root-End Surgery)</option>
+      <option>Pre-prosthetic Surgery</option>
+      <option>Complete Denture (Full Denture)</option>
+      <option>Removable Partial Denture (RPD)</option>
+      <option>Flexible Denture</option>
+      <option>Thermosen</option>
+      <option>Fixed Partial Denture (Dental Bridge)</option>
+      <option>Jacket Crown (Porcelain-Fused-to-Metal or All-Ceramic Crown)</option>
+      <option>Veneered Crown</option>
+      <option>Maryland Bridge (Resin-Bonded Bridge)</option>
+      <option>Dental Implant Placement and Restoration</option>
+      <option>Implant-Supported Prosthesis</option>
+      <option>Denture Relining and Rebasing</option>
+      <option>Denture Repair</option>
+      <option>Vital Tooth Bleaching (Teeth Whitening)</option>
+      <option>Porcelain Veneers</option>
+      <option>Composite Veneers</option>
+      <option>Cosmetic Dental Bonding</option>
+      <option>Gum Contouring (Gingivoplasty)</option>
+      <option>Infant Oral Health Care</option>
+      <option>Child Oral Prophylaxis</option>
+      <option>Fluoride Varnish Application</option>
+      <option>Pit and Fissure Sealants (Children)</option>
+      <option>Pulpotomy / Pulpectomy for Primary Teeth</option>
+      <option>Stainless Steel Crown (SSC)</option>
+      <option>Space Maintainer Fabrication and Placement</option>
+      <option>Interceptive Orthodontics</option>
+      <option>Scaling and Polishing</option>
+      <option>Scaling and Root Planing (Deep Cleaning)</option>
+      <option>Periodontal Maintenance Therapy</option>
+      <option>Gingivectomy</option>
+      <option>Gingivoplasty</option>
+      <option>Periodontal Flap Surgery</option>
+      <option>Bone Grafting (Periodontal)</option>
+      <option>Guided Tissue Regeneration (GTR)</option>
+      <option>Crown Lengthening</option>
+      <option>Comprehensive Orthodontic Treatment (Braces)</option>
+      <option>Metal Braces</option>
+      <option>Ceramic Braces</option>
+      <option>Self-Ligating Braces</option>
+      <option>Clear Aligner Therapy</option>
+      <option>Orthodontic Retainers (Fixed or Removable)</option>
+      <option>Space Regainers / Space Maintainers (Ortho)</option>
+      <option>Orthodontic Consultation and Records</option>
+      <option>Temporomandibular Joint (TMJ) Disorder Management</option>
+      <option>Occlusal Adjustment / Equilibration</option>
+      <option>Night Guard / Occlusal Splint Fabrication</option>
+      <option>Sports Mouthguard Fabrication</option>
+    </select>
 
-<button type="submit">Book Appointment</button>
-</form>
+    <button type="submit">Book Appointment</button>
+    <div class="small-note">This will open WhatsApp and also save your booking in our system.</div>
+  </form>
 </div>
 
 <main class="container">
 
-<section id="about" class="section">
-<h2>About Dr. Olive Lim-Aites</h2>
-<p>
-Dr. Olive Lim-Aites leads the clinic with a strong commitment to excellence in modern, family-friendly dentistry. Known for her gentle touch and compassionate care, she ensures that every patient—from young children to adults—feels comfortable, valued, and well cared for. With a focus on personalized, high-quality treatments, Dr. Lim-Aites creates a warm and welcoming environment where families can achieve healthy, confident smiles together.
-</p>
-</section>
+  <section id="about" class="section">
+    <h2>About Dr. Olive Lim-Aites</h2>
+    <p>
+      Dr. Olive Lim-Aites leads the clinic with a strong commitment to excellence in modern, family-friendly dentistry. Known for her gentle touch and compassionate care, she ensures that every patient—from young children to adults—feels comfortable, valued, and well cared for. With a focus on personalized, high-quality treatments, Dr. Lim-Aites creates a warm and welcoming environment where families can achieve healthy, confident smiles together.
+    </p>
+  </section>
 
-<section id="services" class="section">
-<h2>Complete Dental Services</h2>
-<div class="services-container">
-<ul>
-<li>Oral Prophylaxis (Professional Teeth Cleaning)</li>
-<li>Fluoride Therapy / Topical Fluoride Application</li>
-<li>Dental Sealant Application</li>
-<li>Oral Hygiene Instruction and Counseling</li>
-<li>Dental Recall / Periodic Oral Examination</li>
-<li>Dietary Counseling for Caries Prevention</li>
-<li>Comprehensive Oral Examination</li>
-<li>Periodic Oral Examination</li>
-<li>Intraoral Periapical Radiograph (IOPA)</li>
-<li>Bitewing Radiograph</li>
-<li>Pulp Vitality Testing</li>
-<li>Diagnostic Casts / Study Models</li>
-<li>Composite Resin Restoration</li>
-<li>Glass Ionomer Cement Restoration</li>
-<li>Temporary Restoration</li>
-<li>Core Build-up</li>
-<li>Inlay and Onlay Restorations</li>
-<li>Post and Core Placement</li>
-<li>Tooth Recontouring / Odontoplasty</li>
-<li>Root Canal Therapy (RCT)</li>
-<li>Pulpotomy</li>
-<li>Pulpectom</li>
-<li>Endodontic Retreatment</li>
-<li>Post-Endodontic Restoration</li>
-<li>Simple Tooth Extraction</li>
-<li>Surgical Tooth Extraction</li>
-<li>Impacted Tooth Removal</li>
-<li>Complete Denture (Full Denture)</li>
-<li>Dental Implant Placement and Restoration</li>
-<li>Vital Tooth Bleaching (Teeth Whitening)</li>
-<li>Comprehensive Orthodontic Treatment (Braces)</li>
-<li>Temporomandibular Joint (TMJ) Disorder Management</li>
-</ul>
-</div>
-</section>
+  <section id="services" class="section">
+    <h2>Complete Dental Services</h2>
+    <div class="services-container">
+      <ul>
+        <li>Oral Prophylaxis (Professional Teeth Cleaning)</li>
+        <li>Fluoride Therapy / Topical Fluoride Application</li>
+        <li>Dental Sealant Application</li>
+        <li>Oral Hygiene Instruction and Counseling</li>
+        <li>Dental Recall / Periodic Oral Examination</li>
+        <li>Dietary Counseling for Caries Prevention</li>
+        <li>Comprehensive Oral Examination</li>
+        <li>Periodic Oral Examination</li>
+        <li>Intraoral Periapical Radiograph (IOPA)</li>
+        <li>Bitewing Radiograph</li>
+        <li>Pulp Vitality Testing</li>
+        <li>Diagnostic Casts / Study Models</li>
+        <li>Composite Resin Restoration</li>
+        <li>Glass Ionomer Cement Restoration</li>
+        <li>Temporary Restoration</li>
+        <li>Core Build-up</li>
+        <li>Inlay and Onlay Restorations</li>
+        <li>Post and Core Placement</li>
+        <li>Tooth Recontouring / Odontoplasty</li>
+        <li>Root Canal Therapy (RCT)</li>
+        <li>Pulpotomy</li>
+        <li>Pulpectomy</li>
+        <li>Endodontic Retreatment</li>
+        <li>Post-Endodontic Restoration</li>
+        <li>Simple Tooth Extraction</li>
+        <li>Surgical Tooth Extraction</li>
+        <li>Impacted Tooth Removal (e.g., Third Molar Surgery)</li>
+        <li>Alveoloplasty</li>
+        <li>Frenectomy / Frenotomy</li>
+        <li>Incision and Drainage of Oral Abscess</li>
+        <li>Biopsy of Oral Lesions</li>
+        <li>Apicoectomy (Root-End Surgery)</li>
+        <li>Pre-prosthetic Surgery</li>
+        <li>Complete Denture (Full Denture)</li>
+        <li>Removable Partial Denture (RPD)</li>
+        <li>Flexible Denture</li>
+        <li>Thermosen</li>
+        <li>Fixed Partial Denture (Dental Bridge)</li>
+        <li>Jacket Crown (Porcelain-Fused-to-Metal or All-Ceramic Crown)</li>
+        <li>Veneered Crown</li>
+        <li>Maryland Bridge (Resin-Bonded Bridge)</li>
+        <li>Dental Implant Placement and Restoration</li>
+        <li>Implant-Supported Prosthesis</li>
+        <li>Denture Relining and Rebasing</li>
+        <li>Denture Repair</li>
+        <li>Vital Tooth Bleaching (Teeth Whitening)</li>
+        <li>Porcelain Veneers</li>
+        <li>Composite Veneers</li>
+        <li>Cosmetic Dental Bonding</li>
+        <li>Gum Contouring (Gingivoplasty)</li>
+        <li>Infant Oral Health Care</li>
+        <li>Child Oral Prophylaxis</li>
+        <li>Fluoride Varnish Application</li>
+        <li>Pit and Fissure Sealants (Children)</li>
+        <li>Pulpotomy / Pulpectomy for Primary Teeth</li>
+        <li>Stainless Steel Crown (SSC)</li>
+        <li>Space Maintainer Fabrication and Placement</li>
+        <li>Interceptive Orthodontics</li>
+        <li>Scaling and Polishing</li>
+        <li>Scaling and Root Planing (Deep Cleaning)</li>
+        <li>Periodontal Maintenance Therapy</li>
+        <li>Gingivectomy</li>
+        <li>Gingivoplasty</li>
+        <li>Periodontal Flap Surgery</li>
+        <li>Bone Grafting (Periodontal)</li>
+        <li>Guided Tissue Regeneration (GTR)</li>
+        <li>Crown Lengthening</li>
+        <li>Comprehensive Orthodontic Treatment (Braces)</li>
+        <li>Metal Braces</li>
+        <li>Ceramic Braces</li>
+        <li>Self-Ligating Braces</li>
+        <li>Clear Aligner Therapy</li>
+        <li>Orthodontic Retainers (Fixed or Removable)</li>
+        <li>Space Regainers / Space Maintainers (Ortho)</li>
+        <li>Orthodontic Consultation and Records</li>
+        <li>Temporomandibular Joint (TMJ) Disorder Management</li>
+        <li>Occlusal Adjustment / Equilibration</li>
+        <li>Night Guard / Occlusal Splint Fabrication</li>
+        <li>Sports Mouthguard Fabrication</li>
+      </ul>
+    </div>
+  </section>
 
-<section class="section">
-<h2>Dental Works</h2>
-<div class="slider">
-<img id="slide" src="smile1.jpg">
-</div>
-</section>
+  <section class="section">
+    <h2>Dental Works</h2>
+    <div class="slider">
+      <img id="slide" src="smile1.jpg" alt="Dental Work Slideshow" />
+    </div>
+  </section>
 
 </main>
 
 <footer>
-© 2026 Aites Dental Clinic • Parañaque City
+  © 2026 Aites Dental Clinic • Parañaque City
 </footer>
 
 <script>
+/* Slideshow: smile1.jpg -> smile20.jpg */
 const slides = Array.from({length:20}, (_,i)=>`smile${i+1}.jpg`);
 let current=0;
 setInterval(()=>{
-current=(current+1)%slides.length;
-document.getElementById("slide").src=slides[current];
+  current=(current+1)%slides.length;
+  document.getElementById("slide").src=slides[current];
 },3000);
 
-async function handleBooking(e){
-e.preventDefault();
+/* Google Apps Script Web App URL */
+const BOOKING_API_URL = "https://script.google.com/macros/s/AKfycbxvxSxo6bWIxtJb7PtnGs5y_-wnfxblDvksYS8nOiTXPUUQCyha0JvJPRBCOt9Ee0tOhg/exec";
 
-const fullName=document.getElementById("name").value;
-const phone=document.getElementById("phone").value;
-const email=document.getElementById("email").value;
-const service=document.getElementById("service").value;
-const appointmentDate=document.getElementById("appointmentDate").value;
-const appointmentTime=document.getElementById("appointmentTime").value;
+/* Booking submit */
+document.getElementById("bookingForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
 
-await fetch("YOUR_GOOGLE_SCRIPT_URL_HERE",{
-method:"POST",
-body:JSON.stringify({fullName,phone,email,service,appointmentDate,appointmentTime}),
-headers:{"Content-Type":"application/json"}
+  const fullName = document.getElementById("name").value.trim();
+  const phone = document.getElementById("phone").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const service = document.getElementById("service").value;
+  const appointmentDate = document.getElementById("appointmentDate").value;
+  const appointmentTime = document.getElementById("appointmentTime").value;
+
+  // 1) OPEN WHATSAPP FIRST (prevents popup blocking)
+  const waMessage =
+    "Hello Aites Dental Clinic,%0A%0AI would like to book an appointment.%0A%0A" +
+    "Name: " + encodeURIComponent(fullName) + "%0A" +
+    "Phone: " + encodeURIComponent(phone) + "%0A" +
+    "Email: " + encodeURIComponent(email) + "%0A" +
+    "Service: " + encodeURIComponent(service) + "%0A" +
+    "Date: " + encodeURIComponent(appointmentDate) + "%0A" +
+    "Time: " + encodeURIComponent(appointmentTime);
+
+  const waUrl = "https://wa.me/639952949645?text=" + waMessage;
+  window.open(waUrl, "_blank");
+
+  // 2) SEND TO GOOGLE SHEETS / CALENDAR / EMAIL (backend)
+  try{
+    const payload = { fullName, phone, email, service, appointmentDate, appointmentTime };
+
+    // Note: Apps Script sometimes needs no-cors; we don't need to read response, only send.
+    await fetch(BOOKING_API_URL, {
+      method: "POST",
+      mode: "no-cors",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+      keepalive: true
+    });
+
+    alert("✅ Booking saved! WhatsApp opened for sending the message.");
+
+    // Optional: clear form
+    // e.target.reset();
+  }catch(err){
+    console.error(err);
+    alert("⚠ Booking sent to WhatsApp, but saving to system failed. Please try again.");
+  }
 });
-
-const message =
-"Hello Aites Dental Clinic,%0A%0AI would like to book an appointment.%0A%0A"+
-"Name: "+encodeURIComponent(fullName)+"%0A"+
-"Phone: "+encodeURIComponent(phone)+"%0A"+
-"Service: "+encodeURIComponent(service)+"%0A"+
-"Date: "+encodeURIComponent(appointmentDate)+"%0A"+
-"Time: "+encodeURIComponent(appointmentTime);
-
-window.open("https://wa.me/639952949645?text="+message,"_blank");
-alert("Booking sent successfully!");
-}
 </script>
 
 </body>
