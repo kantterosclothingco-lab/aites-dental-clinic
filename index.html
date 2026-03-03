@@ -37,16 +37,13 @@ nav{
   gap:10px;
 }
 
-.brand img{
-  height:50px;
-}
+.brand img{ height:50px; }
 
 nav a{
   color:var(--purple);
   font-weight:600;
 }
 
-/* HERO */
 .hero{
   height:85vh;
   display:flex;
@@ -80,7 +77,6 @@ nav a{
   font-weight:600;
 }
 
-/* BOOKING */
 .top-booking{
   max-width:1100px;
   margin:-80px auto 60px;
@@ -97,9 +93,9 @@ nav a{
   border:none;
   color:white;
   font-weight:700;
+  width:100%;
 }
 
-/* SECTIONS */
 .section{
   padding:4rem 1rem;
   text-align:center;
@@ -110,31 +106,25 @@ nav a{
   color:var(--purple-dark);
 }
 
-/* SERVICES */
 .services-container{
   max-width:1200px;
   margin:2rem auto;
-}
-
-.service-block{
   background:white;
-  padding:20px;
-  border-radius:18px;
-  margin-bottom:25px;
-  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+  padding:2rem;
+  border-radius:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
   text-align:left;
 }
 
-.service-block h3{
-  color:var(--purple-dark);
-  margin-bottom:10px;
-}
-
-.service-block ul{
+.services-container ul{
+  columns:2;
   margin-left:20px;
 }
 
-/* SLIDESHOW */
+.services-container li{
+  margin:6px 0;
+}
+
 .slider{
   max-width:1100px;
   margin:2rem auto;
@@ -182,10 +172,9 @@ footer{
 </div>
 </section>
 
-<!-- BOOKING -->
 <div class="top-booking">
 <h2>Book Appointment</h2>
-<form onsubmit="handleBooking(); return false;">
+<form onsubmit="handleBooking(event)">
 <input type="text" id="name" placeholder="Full Name" required>
 <input type="tel" id="phone" placeholder="Contact Number" required>
 <input type="email" id="email" placeholder="Email Address" required>
@@ -194,12 +183,37 @@ footer{
 
 <select id="service" required>
 <option value="">Select Service</option>
-<option>Oral Prophylaxis</option>
-<option>Root Canal Therapy</option>
-<option>Dental Implant</option>
-<option>Orthodontics</option>
-<option>Teeth Whitening</option>
-<option>TMJ Treatment</option>
+<option>Oral Prophylaxis (Professional Teeth Cleaning)</option>
+<option>Fluoride Therapy / Topical Fluoride Application</option>
+<option>Dental Sealant Application</option>
+<option>Oral Hygiene Instruction and Counseling</option>
+<option>Dental Recall / Periodic Oral Examination</option>
+<option>Dietary Counseling for Caries Prevention</option>
+<option>Comprehensive Oral Examination</option>
+<option>Intraoral Periapical Radiograph (IOPA)</option>
+<option>Bitewing Radiograph</option>
+<option>Pulp Vitality Testing</option>
+<option>Diagnostic Casts / Study Models</option>
+<option>Composite Resin Restoration</option>
+<option>Glass Ionomer Cement Restoration</option>
+<option>Temporary Restoration</option>
+<option>Core Build-up</option>
+<option>Inlay and Onlay Restorations</option>
+<option>Post and Core Placement</option>
+<option>Tooth Recontouring / Odontoplasty</option>
+<option>Root Canal Therapy (RCT)</option>
+<option>Pulpotomy</option>
+<option>Pulpectom</option>
+<option>Endodontic Retreatment</option>
+<option>Post-Endodontic Restoration</option>
+<option>Simple Tooth Extraction</option>
+<option>Surgical Tooth Extraction</option>
+<option>Impacted Tooth Removal</option>
+<option>Complete Denture (Full Denture)</option>
+<option>Dental Implant Placement and Restoration</option>
+<option>Vital Tooth Bleaching (Teeth Whitening)</option>
+<option>Comprehensive Orthodontic Treatment (Braces)</option>
+<option>Temporomandibular Joint (TMJ) Disorder Management</option>
 </select>
 
 <button type="submit">Book Appointment</button>
@@ -208,7 +222,6 @@ footer{
 
 <main class="container">
 
-<!-- ABOUT -->
 <section id="about" class="section">
 <h2>About Dr. Olive Lim-Aites</h2>
 <p>
@@ -216,55 +229,46 @@ Dr. Olive Lim-Aites leads the clinic with a strong commitment to excellence in m
 </p>
 </section>
 
-<!-- SERVICES -->
 <section id="services" class="section">
 <h2>Complete Dental Services</h2>
-
 <div class="services-container">
-
-<div class="service-block">
-<h3>🦷 Preventive Care</h3>
 <ul>
-<li>Oral Prophylaxis</li>
-<li>Fluoride Therapy</li>
-<li>Dental Sealant</li>
-<li>Oral Hygiene Counseling</li>
+<li>Oral Prophylaxis (Professional Teeth Cleaning)</li>
+<li>Fluoride Therapy / Topical Fluoride Application</li>
+<li>Dental Sealant Application</li>
+<li>Oral Hygiene Instruction and Counseling</li>
+<li>Dental Recall / Periodic Oral Examination</li>
+<li>Dietary Counseling for Caries Prevention</li>
+<li>Comprehensive Oral Examination</li>
+<li>Periodic Oral Examination</li>
+<li>Intraoral Periapical Radiograph (IOPA)</li>
+<li>Bitewing Radiograph</li>
+<li>Pulp Vitality Testing</li>
+<li>Diagnostic Casts / Study Models</li>
+<li>Composite Resin Restoration</li>
+<li>Glass Ionomer Cement Restoration</li>
+<li>Temporary Restoration</li>
+<li>Core Build-up</li>
+<li>Inlay and Onlay Restorations</li>
+<li>Post and Core Placement</li>
+<li>Tooth Recontouring / Odontoplasty</li>
+<li>Root Canal Therapy (RCT)</li>
+<li>Pulpotomy</li>
+<li>Pulpectom</li>
+<li>Endodontic Retreatment</li>
+<li>Post-Endodontic Restoration</li>
+<li>Simple Tooth Extraction</li>
+<li>Surgical Tooth Extraction</li>
+<li>Impacted Tooth Removal</li>
+<li>Complete Denture (Full Denture)</li>
+<li>Dental Implant Placement and Restoration</li>
+<li>Vital Tooth Bleaching (Teeth Whitening)</li>
+<li>Comprehensive Orthodontic Treatment (Braces)</li>
+<li>Temporomandibular Joint (TMJ) Disorder Management</li>
 </ul>
-</div>
-
-<div class="service-block">
-<h3>🛠 Restorative & Surgery</h3>
-<ul>
-<li>Root Canal Therapy</li>
-<li>Tooth Extraction</li>
-<li>Dental Implant</li>
-<li>Crowns & Bridges</li>
-</ul>
-</div>
-
-<div class="service-block">
-<h3>😁 Cosmetic Dentistry</h3>
-<ul>
-<li>Teeth Whitening</li>
-<li>Veneers</li>
-<li>Dental Bonding</li>
-</ul>
-</div>
-
-<div class="service-block">
-<h3>🦴 Orthodontics & TMJ</h3>
-<ul>
-<li>Metal Braces</li>
-<li>Ceramic Braces</li>
-<li>Clear Aligners</li>
-<li>TMJ Management</li>
-</ul>
-</div>
-
 </div>
 </section>
 
-<!-- SLIDESHOW -->
 <section class="section">
 <h2>Dental Works</h2>
 <div class="slider">
@@ -286,7 +290,9 @@ current=(current+1)%slides.length;
 document.getElementById("slide").src=slides[current];
 },3000);
 
-async function handleBooking(){
+async function handleBooking(e){
+e.preventDefault();
+
 const fullName=document.getElementById("name").value;
 const phone=document.getElementById("phone").value;
 const email=document.getElementById("email").value;
@@ -294,15 +300,13 @@ const service=document.getElementById("service").value;
 const appointmentDate=document.getElementById("appointmentDate").value;
 const appointmentTime=document.getElementById("appointmentTime").value;
 
-const data={fullName,phone,email,service,appointmentDate,appointmentTime};
-
-await fetch("https://script.google.com/macros/s/AKfycbxvxSxo6bWIxtJb7PtnGs5y_-wnfxblDvksYS8nOiTXPUUQCyha0JvJPRBCOt9Ee0tOhg/exec",{
+await fetch("YOUR_GOOGLE_SCRIPT_URL_HERE",{
 method:"POST",
-body:JSON.stringify(data),
+body:JSON.stringify({fullName,phone,email,service,appointmentDate,appointmentTime}),
 headers:{"Content-Type":"application/json"}
 });
 
-const message=
+const message =
 "Hello Aites Dental Clinic,%0A%0AI would like to book an appointment.%0A%0A"+
 "Name: "+encodeURIComponent(fullName)+"%0A"+
 "Phone: "+encodeURIComponent(phone)+"%0A"+
@@ -311,8 +315,7 @@ const message=
 "Time: "+encodeURIComponent(appointmentTime);
 
 window.open("https://wa.me/639952949645?text="+message,"_blank");
-
-alert("Booking Sent Successfully!");
+alert("Booking sent successfully!");
 }
 </script>
 
