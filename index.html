@@ -38,6 +38,8 @@ nav a{
   color:var(--purple);
   font-weight:600;
 }
+
+/* HERO */
 .hero{
   height:85vh;
   display:flex;
@@ -51,12 +53,11 @@ nav a{
   content:"";
   position:absolute;
   inset:0;
-  background:rgba(255,255,255,0.82);
+  background:rgba(255,255,255,0.85);
 }
 .hero-content{
   position:relative;
   z-index:2;
-  padding:0 16px;
 }
 .hero h1{
   font-family:'Playfair Display',serif;
@@ -67,6 +68,8 @@ nav a{
   color:var(--purple);
   font-weight:600;
 }
+
+/* BOOKING */
 .top-booking{
   max-width:1100px;
   margin:-80px auto 60px;
@@ -83,6 +86,8 @@ nav a{
   color:white;
   font-weight:700;
 }
+
+/* SECTIONS */
 .section{
   padding:4rem 1rem;
   text-align:center;
@@ -91,28 +96,24 @@ nav a{
   font-family:'Playfair Display',serif;
   color:var(--purple-dark);
 }
-.services-list{
+
+.services-container{
   max-width:1200px;
   margin:2rem auto;
-  text-align:left;
   background:white;
   padding:2rem;
   border-radius:20px;
   box-shadow:0 10px 30px rgba(0,0,0,0.08);
+  text-align:left;
 }
-.services-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:18px;
+.services-container ul{
+  columns:2;
 }
-.service-group{
-  border:1px solid rgba(91,45,139,0.12);
-  border-radius:16px;
-  padding:16px;
+.services-container li{
+  margin:6px 0;
 }
-.service-group h3{
-  color:var(--purple-dark);
-}
+
+/* SLIDESHOW */
 .slider{
   max-width:1100px;
   margin:2rem auto;
@@ -124,6 +125,7 @@ nav a{
   border-radius:20px;
   box-shadow:0 20px 40px rgba(0,0,0,0.15);
 }
+
 footer{
   background:var(--purple-dark);
   color:white;
@@ -192,7 +194,57 @@ Dr. Olive Lim-Aites leads the clinic with a strong commitment to excellence in m
 
 <section id="services" class="section">
 <h2>Complete Dental Services</h2>
-<p>Full list of services available at the clinic.</p>
+
+<div class="services-container">
+<ul>
+<li>Oral Prophylaxis (Professional Teeth Cleaning)</li>
+<li>Fluoride Therapy / Topical Fluoride Application</li>
+<li>Dental Sealant Application</li>
+<li>Oral Hygiene Instruction and Counseling</li>
+<li>Dental Recall / Periodic Oral Examination</li>
+<li>Dietary Counseling for Caries Prevention</li>
+<li>Comprehensive Oral Examination</li>
+<li>Periodic Oral Examination</li>
+<li>Intraoral Periapical Radiograph (IOPA)</li>
+<li>Bitewing Radiograph</li>
+<li>Pulp Vitality Testing</li>
+<li>Diagnostic Casts / Study Models</li>
+<li>Composite Resin Restoration</li>
+<li>Glass Ionomer Cement Restoration</li>
+<li>Temporary Restoration</li>
+<li>Core Build-up</li>
+<li>Inlay and Onlay Restorations</li>
+<li>Post and Core Placement</li>
+<li>Tooth Recontouring / Odontoplasty</li>
+<li>Root Canal Therapy (RCT)</li>
+<li>Pulpotomy</li>
+<li>Pulpectomy</li>
+<li>Endodontic Retreatment</li>
+<li>Post-Endodontic Restoration</li>
+<li>Simple Tooth Extraction</li>
+<li>Surgical Tooth Extraction</li>
+<li>Impacted Tooth Removal</li>
+<li>Alveoloplasty</li>
+<li>Frenectomy / Frenotomy</li>
+<li>Incision and Drainage of Oral Abscess</li>
+<li>Biopsy of Oral Lesions</li>
+<li>Apicoectomy</li>
+<li>Complete Denture (Full Denture)</li>
+<li>Removable Partial Denture (RPD)</li>
+<li>Flexible Denture</li>
+<li>Fixed Partial Denture (Dental Bridge)</li>
+<li>Dental Implant Placement and Restoration</li>
+<li>Vital Tooth Bleaching</li>
+<li>Porcelain Veneers</li>
+<li>Composite Veneers</li>
+<li>Cosmetic Dental Bonding</li>
+<li>Infant Oral Health Care</li>
+<li>Child Oral Prophylaxis</li>
+<li>Scaling and Root Planing</li>
+<li>Comprehensive Orthodontic Treatment (Braces)</li>
+<li>TMJ Disorder Management</li>
+</ul>
+</div>
 </section>
 
 <section class="section">
@@ -217,7 +269,6 @@ document.getElementById("slide").src=slides[current];
 },3000);
 
 async function handleBooking(){
-
 const fullName=document.getElementById("name").value;
 const phone=document.getElementById("phone").value;
 const email=document.getElementById("email").value;
@@ -225,14 +276,7 @@ const service=document.getElementById("service").value;
 const appointmentDate=document.getElementById("appointmentDate").value;
 const appointmentTime=document.getElementById("appointmentTime").value;
 
-const data={
-fullName,
-phone,
-email,
-service,
-appointmentDate,
-appointmentTime
-};
+const data={fullName,phone,email,service,appointmentDate,appointmentTime};
 
 await fetch("https://script.google.com/macros/s/AKfycbxvxSxo6bWIxtJb7PtnGs5y_-wnfxblDvksYS8nOiTXPUUQCyha0JvJPRBCOt9Ee0tOhg/exec",{
 method:"POST",
